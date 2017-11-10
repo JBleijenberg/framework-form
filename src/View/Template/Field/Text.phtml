@@ -1,0 +1,2 @@
+
+<input type="text" id="<?= $this->getId(); ?>" name="<?= $this->getName();?>" class="<?= $this->getClass();?>"<?= (!$this->getRequired()) ?: ' required'; ?><?= (!$this->getDisabled()) ?: ' disabled'; ?> autocomplete="<?= $this->getAutocomplete(); ?>" placeholder="<?= $this->getPlaceholder(); ?>" value="<?= $this->getValue(); ?>">

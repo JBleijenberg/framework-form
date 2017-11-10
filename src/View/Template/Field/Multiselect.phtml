@@ -1,0 +1,6 @@
+
+<select id="<?= $this->getId();?>" name="<?= $this->getName(); ?>" multiple="multiple">class="<?= $this->getClass();?>"<?=(!$this->getRequired()) ?: ' required' ?><?= (!$this->getDisabled()) ?: ' disabled';?>>
+<?php foreach ($this->getOptions() as $value => $label): ?>
+    <option value="<?= $value ?>"<?= (!in_array($value, $this->getValues())) ?: ' selected'?>><?= $label ?></option>
+<?php endforeach; ?>
+</select>
