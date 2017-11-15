@@ -20,28 +20,23 @@
  * @copyright   Copyright (c) 2017 J!Code (http://www.jcode.nl)
  * @license     http://opensource.org/licenses/GPL-3.0 General Public License (GPL 3.0)
  */
-namespace Jcode\Form\Block\Field;
+namespace Jcode\Form\Field;
 
-use Jcode\Form\Block\Field;
 
-class Multiselect extends Field
+use Jcode\Form\Field;
+
+class Text extends Field
 {
 
-    protected $template = 'Jcode_Form::Field/Multiselect.phtml';
+    protected $template = 'Jcode_Form::Field/Text.phtml';
 
     protected $autocomplete = 'off';
 
-    protected $options;
-
-    protected $value = [];
-
-    public function getOptions()
+    /**
+     * @return string
+     */
+    public function getAutocomplete() :string
     {
-        return $this->options;
-    }
-
-    public function getValues()
-    {
-        return $this->value;
+        return $this->autocomplete;
     }
 }

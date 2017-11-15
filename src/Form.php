@@ -22,7 +22,7 @@
  */
 namespace Jcode;
 
-use Jcode\Form\Block\Fieldset;
+use Jcode\Form\Fieldset;
 
 class Form extends DataObject
 {
@@ -46,7 +46,7 @@ class Form extends DataObject
      */
     public function addFieldset($name) :Fieldset
     {
-        $this->fieldsets[$name] = Application::getClass('\Jcode\Form\Block\Fieldset', [['label' => $name]]);
+        $this->fieldsets[$name] = Application::getClass('\Jcode\Form\Fieldset', [['label' => $name]]);
 
         return $this->fieldsets[$name];
     }

@@ -20,7 +20,7 @@
  * @copyright   Copyright (c) 2017 J!Code (http://www.jcode.nl)
  * @license     http://opensource.org/licenses/GPL-3.0 General Public License (GPL 3.0)
  */
-namespace Jcode\Form\Block;
+namespace Jcode\Form;
 
 use Jcode\Layout\Block\Template;
 
@@ -48,6 +48,8 @@ class Field extends Template
      * @var string $class
      */
     protected $class;
+
+    protected $gridclass;
 
     /**
      * (pre)defined value for input field
@@ -196,5 +198,10 @@ class Field extends Template
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function getGridClass()
+    {
+        return $this->gridclass;
     }
 }

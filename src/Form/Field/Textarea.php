@@ -20,12 +20,37 @@
  * @copyright   Copyright (c) 2017 J!Code (http://www.jcode.nl)
  * @license     http://opensource.org/licenses/GPL-3.0 General Public License (GPL 3.0)
  */
-namespace Jcode\Form\Block\Field;
+namespace Jcode\Form\Field;
 
-use Jcode\Form\Block\Field;
 
-class Password extends Field
+use Jcode\Form\Field;
+
+class Textarea extends Field
 {
 
-    protected $template = 'Jcode_Form::Field/Password.phtml';
+    protected $template = 'Jcode_Form::Field/Textarea.phtml';
+
+    protected $autocomplete = 'off';
+
+    protected $cols;
+
+    protected $rows;
+
+    /**
+     * @return string
+     */
+    public function getAutocomplete() :string
+    {
+        return $this->autocomplete;
+    }
+
+    public function getCols() :?Int
+    {
+        return $this->cols;
+    }
+
+    public function getRows() :?Int
+    {
+        return $this->rows;
+    }
 }

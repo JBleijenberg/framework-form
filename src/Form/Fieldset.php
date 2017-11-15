@@ -20,7 +20,7 @@
  * @copyright   Copyright (c) 2017 J!Code (http://www.jcode.nl)
  * @license     http://opensource.org/licenses/GPL-3.0 General Public License (GPL 3.0)
  */
-namespace Jcode\Form\Block;
+namespace Jcode\Form;
 
 use Jcode\Application;
 use Jcode\DataObject;
@@ -68,7 +68,7 @@ class Fieldset extends DataObject
     {
         $type = ucfirst($type);
 
-        $className = "Jcode\\Form\\Block\\Field\\{$type}";
+        $className = "\\Jcode\\Form\\Field\\{$type}";
 
         $instance = Application::getClass($className, [$options]);
 

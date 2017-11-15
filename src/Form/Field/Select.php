@@ -20,22 +20,28 @@
  * @copyright   Copyright (c) 2017 J!Code (http://www.jcode.nl)
  * @license     http://opensource.org/licenses/GPL-3.0 General Public License (GPL 3.0)
  */
-namespace Jcode\Form\Block\Field;
+namespace Jcode\Form\Field;
 
-use Jcode\Form\Block\Field;
+use Jcode\Form\Field as FormField;
 
-class Text extends Field
+class Select extends FormField
 {
 
-    protected $template = 'Jcode_Form::Field/Text.phtml';
+    protected $template = 'Jcode_Form::Field/Select.phtml';
 
     protected $autocomplete = 'off';
 
-    /**
-     * @return string
-     */
-    public function getAutocomplete() :string
+    protected $options;
+
+    protected $multiple;
+
+    public function getOptions()
     {
-        return $this->autocomplete;
+        return $this->options;
+    }
+
+    public function getMultiple()
+    {
+        return $this->multiple;
     }
 }
