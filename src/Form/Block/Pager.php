@@ -37,9 +37,13 @@ class Pager extends Template
 
     protected $totalPages;
 
+    protected $totalRows;
+
     protected $url;
 
     protected $pageParameter = 'p';
+
+    protected $isSharedInstance = true;
 
     /**
      * Set pager limit
@@ -132,7 +136,7 @@ class Pager extends Template
         return $this->sortColumn;
     }
 
-    public function beforeRender()
+    public function load()
     {
         /** @var DBResource $resource */
         $resource   = $this->getResource();
@@ -144,12 +148,16 @@ class Pager extends Template
         $resource->addLimit($offset, $this->getLimit());
         $resource->addOrder($this->getSort(), $this->getSortOrder());
         $resource->calculateFoundRows();
+
+        $this->totalRows = $resource->getTotalRows();
+
+        return $this;
     }
 
     public function getTotalPages()
     {
         if (!$this->totalPages) {
-            $this->totalPages = ceil($this->getResource()->getTotalRows() / $this->getLimit());
+            $this->totalPages = ceil($this->totalRows / $this->getLimit());
         }
 
         return $this->totalPages;
