@@ -109,7 +109,7 @@ class Pager extends Template
      * Get sort order
      * @return String
      */
-    public function getSortOrder() :String
+    public function getSortOrder() :?String
     {
         return $this->sortOrder;
     }
@@ -131,7 +131,7 @@ class Pager extends Template
      * Get sort column
      * @return String
      */
-    public function getSort() :String
+    public function getSort() :?String
     {
         return $this->sortColumn;
     }
@@ -146,7 +146,11 @@ class Pager extends Template
         $offset     = $page * $this->getLimit();
 
         $resource->addLimit($offset, $this->getLimit());
-        $resource->addOrder($this->getSort(), $this->getSortOrder());
+
+        if ($this->getSort() && $this->getSortOrder()) {
+            $resource->addOrder($this->getSort(), $this->getSortOrder());
+        }
+
         $resource->calculateFoundRows();
 
         $this->totalRows = $resource->getTotalRows();
