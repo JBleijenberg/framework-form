@@ -1,0 +1,6 @@
+
+<?php foreach ($this->getOptions() as $value => $label): ?>
+    <div class="<?= $this->getClass(); ?>">
+        <input id="<?= $this->getName().$value; ?>" type="checkbox" name="<?= $this->getName(); ?>[]" value="<?= $value; ?>" <?= (!in_array($value, $this->getValues())) ?: ' checked="checked"'?>><label for="<?= $this->getName().$value; ?>"><?= $label; ?></label>
+    </div>
+<?php endforeach;;
