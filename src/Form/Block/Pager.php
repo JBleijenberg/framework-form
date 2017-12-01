@@ -109,7 +109,7 @@ class Pager extends Template
      * Get sort order
      * @return String
      */
-    public function getSortOrder() :?String
+    public function getSortOrder()
     {
         return $this->sortOrder;
     }
@@ -131,7 +131,7 @@ class Pager extends Template
      * Get sort column
      * @return String
      */
-    public function getSort() :?String
+    public function getSort()
     {
         return $this->sortColumn;
     }

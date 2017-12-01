@@ -44,12 +44,12 @@ class Textarea extends Field
         return $this->autocomplete;
     }
 
-    public function getCols() :?Int
+    public function getCols()
     {
         return $this->cols;
     }
 
-    public function getRows() :?Int
+    public function getRows()
     {
         return $this->rows;
     }
