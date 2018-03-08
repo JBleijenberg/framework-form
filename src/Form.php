@@ -134,4 +134,23 @@ class Form extends DataObject
 
         return $this;
     }
+
+    public function getFormKey()
+    {
+        $session = Application::getClass('\Jcode\Model\Session');
+        $range   = implode('', [
+            implode('', range('a', 'z')),
+            implode('', range('A', 'Z')),
+            implode('', range(0, 9))
+        ]);
+        $key     = '';
+
+        for ($i = 0; $i < 8; $i++) {
+            $key .= $range[rand(0, strlen($range)-1)];
+        }
+
+        $session->setFormKey($key);
+
+        return $session->getFormKey();
+    }
 }

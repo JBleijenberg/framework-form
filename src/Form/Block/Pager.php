@@ -245,8 +245,11 @@ class Pager extends Template
     public function getPagesArray() :array
     {
         $array = [];
+        $pageIDs = ($this->getTotalPages() > 0)
+            ? range(1, $this->getTotalPages())
+            : [1];
 
-        foreach (range(1, $this->getTotalPages()) as $pageID) {
+        foreach ($pageIDs as $pageID) {
             $array[$pageID]['url'] = $this->getUrl($this->getPagerUrl(), ['params' => [$this->getPageParameter() => $pageID]]);
 
             switch (true) {

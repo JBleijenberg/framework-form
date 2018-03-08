@@ -74,6 +74,10 @@ class Field extends Template
      */
     protected $extra;
 
+    protected $afterElementHtml;
+
+    protected $beforeElementHtml;
+
     protected $template;
 
     public function __construct($options)
@@ -185,6 +189,11 @@ class Field extends Template
         $this->disabled = $disabled;
     }
 
+    public function getDisabled()
+    {
+        return $this->isDisabled();
+    }
+
     public function getPlaceholder()
     {
         return $this->placeholder;
@@ -203,5 +212,25 @@ class Field extends Template
     public function getGridClass()
     {
         return $this->gridclass;
+    }
+
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    public function getAfterElementHtml()
+    {
+        return $this->afterElementHtml;
+    }
+
+    public function getBeforeElementHtml()
+    {
+        return $this->beforeElementHtml;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->render();
     }
 }

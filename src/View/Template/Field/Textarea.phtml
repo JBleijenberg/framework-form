@@ -1,2 +1,2 @@
 
-<textarea cols="<?= $this->getCols(); ?>" name="<?= $this->getName(); ?>" rows="<?= $this->getRows(); ?>" id="<?= $this->getId(); ?>" class="<?= $this->getClass();?>"<?= (!$this->getRequired()) ?: ' required'; ?><?= (!$this->getDisabled()) ?: ' disabled'; ?>><?= $this->getValue(); ?></textarea>
+<textarea cols="<?= $this->getCols(); ?>" name="<?= $this->getName(); ?>" rows="<?= $this->getRows(); ?>" id="<?= $this->getId(); ?>" class="<?= $this->getClass();?>"<?= ($this->getRequired()) ? ' required':null; ?><?= ($this->getDisabled()) ? ' disabled':null; ?> <?= $this->getExtra(); ?>><?= $this->getValue(); ?></textarea>

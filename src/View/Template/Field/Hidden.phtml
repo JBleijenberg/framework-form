@@ -1,0 +1,2 @@
+
+<input type="hidden" id="<?= $this->getId(); ?>" name="<?= $this->getName();?>" class="<?= $this->getClass();?>"<?= ($this->getRequired()) ? ' required' : null; ?><?= ($this->getDisabled()) ? ' disabled' : null; ?> autocomplete="<?= $this->getAutocomplete(); ?>" placeholder="<?= $this->getPlaceholder(); ?>" value="<?= $this->getValue(); ?>" <?= $this->getExtra(); ?>>
